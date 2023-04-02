@@ -13,6 +13,8 @@ def temp_converter(a,b):
     elif b == "Fahrenheit" or b == "f":
         new_temp = (a - 32) * 5/9
         return new_temp
+    else:
+        final_label.config(text=f"Result: Invalid Unit.")
 
 def update_temp():
     a = temp_entry.get()
@@ -24,6 +26,8 @@ def update_temp():
     elif b == "Fahrenheit" or b == "f":
         new_temp = temp_converter(a,b)
         final_label.config(text=f"Result: {a}{b} = {new_temp}C°")
+    else:
+        final_label.config(text=f"Result: Invalid Unit.")
 
 
 temp_label = tk.Label(root, text="Temperature")
