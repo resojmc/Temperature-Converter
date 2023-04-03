@@ -6,11 +6,11 @@ root.title("Temperature Converter")
 
 def temp_converter(a,b):
     # function takes argument (a)temperature and (b)unit
-    b.capitalize()
-    if b == "Celcius" or b == "c":
+    b = b.capitalize()
+    if b == "Celcius" or b == "C":
         new_temp = (a * 9/5) + 32
         return new_temp
-    elif b == "Fahrenheit" or b == "f":
+    elif b == "Fahrenheit" or b == "F":
         new_temp = (a - 32) * 5/9
         return new_temp
     else:
@@ -20,10 +20,11 @@ def update_temp():
     a = temp_entry.get()
     a = int(a)
     b = unit_entry.get()
-    if b == "Celcius" or b == "c":
+    b = b.capitalize()
+    if b == "Celcius" or "C":
         new_temp = temp_converter(a,b)
         final_label.config(text=f"Result: {a}{b} = {new_temp}F°")
-    elif b == "Fahrenheit" or b == "f":
+    elif b == "Fahrenheit" or b == "F":
         new_temp = temp_converter(a,b)
         final_label.config(text=f"Result: {a}{b} = {new_temp}C°")
     else:
